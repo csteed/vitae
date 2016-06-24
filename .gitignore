@@ -1,0 +1,9 @@
+*.bak
+*.out
+*.spl
+*.aux
+*.blg
+*.log
+*.bbl
+*.swp
+*.DS_Store

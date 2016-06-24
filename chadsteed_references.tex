@@ -1,0 +1,177 @@
+%------------------------------------
+% Dario Taraborelli
+% Typesetting your academic CV in LaTeX
+%
+% URL: http://nitens.org/taraborelli/cvtex
+% DISCLAIMER: This template is provided for free and without any guarantee 
+% that it will correctly compile on your system if you have a non-standard  
+% configuration.
+% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
+%------------------------------------
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, a4paper]{article}
+\usepackage{fontspec}
+%\usepackage{wrapfig}
+%\usepackage{etoolbox}
+
+% DOCUMENT LAYOUT
+\usepackage[margin=1.0in]{geometry}
+%\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
+%\geometry{a4paper, textwidth=6.0in, textheight=9.5in, marginparsep=7pt, marginparwidth=.6in}
+\setlength\parindent{0in}
+
+% FONTS
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text} % converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}]{Hoefler Text}
+\setmonofont[Scale=0.8]{Monaco} 
+\setsansfont[Scale=0.9]{Optima Regular} 
+% ---- CUSTOM AMPERSAND
+\newcommand{\amper}{{\fontspec[Scale=.95]{Hoefler Text}\selectfont\itshape\&}}
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+\newcommand{\years}[1]{\marginnote{\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
+
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\sffamily\mdseries\large\underline} 
+\subsectionfont{\rmfamily\mdseries\scshape\normalsize} 
+\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize} 
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+%\PassOptionsToPackage{hyphens}{url}\usepackage[xetex, bookmarks, colorlinks, breaklinks, pdftitle={Chad A. Steed - vita},pdfauthor={Chad A. Steed}]{hyperref}  
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage[xetex, bookmarks, colorlinks, breaklinks, pdftitle={Chad A. Steed - References},pdfauthor={Chad A. Steed}]{hyperref}  
+%\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=blue} 
+\hypersetup{linkcolor=Maroon,citecolor=Maroon,filecolor=black,urlcolor=Maroon} 
+\renewcommand{\descriptionlabel}[1]{\hspace{\labelsep}\textsc{#1}}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+%\rhead{\small Chad A. Steed • References}
+\rfoot{\small \thepage\ / \pageref{LastPage} • \today}
+%\lhead{}
+%\rhead{}
+%\chead{\small Research and Teaching Statements}
+%\chead{\small \nouppercase\leftmark}
+%\cfoot{\small Page \texttt{\thepage}\ of \texttt{\pageref{LastPage}}}
+%\rfoot{\small \today}
+%\lfoot{\small Chad A.\ Steed}
+%\rfoot{\small \href{http://cda.ornl.gov/steed/personal/}{http://cda.ornl.gov/steed/personal/}}
+%\renewcommand{\headrulewidth}{0cm}
+\renewcommand{\headrulewidth}{0cm}
+%\renewcommand\footrule{\begin{minipage}{1\textwidth}
+%\hrule width \hsize height 2pt \kern 1mm \hrule width \hsize   
+%\end{minipage}\par}%
+
+% DOCUMENT
+\begin{document}
+
+%\begin{centering}
+%\noindent\textsf{\LARGE References}\\
+%\vspace{2pt}
+%\noindent\textsf{\Large Chad A.~Steed}\\
+%\end{centering}
+%\vspace{10pt}
+
+%\section*{References}
+\begin{tabbing}
+    {\sffamily \LARGE \textbf{CHAD A.\ STEED}} \` {\sffamily \LARGE REFERENCES}
+\end{tabbing}
+
+Dr.~J.~Edward Swan II\\
+Professor, Department of Computer Science and Engineering\\
+P.O.~Box \texttt{9637}\\
+Mississippi State University, MS  \texttt{39762}\\
+Work: \texttt{662.325.7507}\\
+Cell: \texttt{662.312.4411}\\
+Fax: \texttt{662.325.8997}\\
+Email: swan@acm.org\\
+Web: \href{http://www.cse.msstate.edu/~swan}{http://www.cse.msstate.edu/~swan}\\
+
+Mr.~Michael M.~Harris, PE\\
+Branch Head (Retired), Mapping, Charting, and Geodesy Branch (Code 7440)\\
+\texttt{506} Seube Street\\
+Bay Saint Louis, MS  \texttt{39520}\\
+Home: \texttt{228.467.4528}\\
+Cell: \texttt{228.342.3554}\\
+Email: mmhseube@bellsouth.net\\
+
+Dr.~Robert J.~Moorhead\\
+Director, Geosystems Research Institute\\
+Director, Northern Gulf Institute\\
+Billie J.~Ball Professor, Department of Electrical and Computer Engineering\\
+Geosystems Research Institute\\
+P.O.~Box \texttt{9627}\\
+Mississippi State, MS  \texttt{39762}\\
+Work: \texttt{662.325.2850}\\
+Cell: \texttt{662.321.3066}\\
+Fax: \texttt{662.325.7692}\\
+Email: rjm@gri.msstate.edu\\
+Web: \href{http://www.hpc.msstate.edu/directory/information.php?eid=1258}{http://www.hpc.msstate.edu/directory/information.php?eid=1258}\\
+%http://www.ece.mstate.edu/~rjm}{http://www.ece.mstate.edu/~rjm}\\
+
+Dr.\ Thomas E.\ Potok\\
+Group Leader, Computational Data Analytics Group\\
+Computational Sciences and Engineering Division\\
+Oak Ridge National Laboratory\\
+One Bethel Valley Road\\
+P.O.\ Box \texttt{2008}, MS-\texttt{6085}\\
+Oak Ridge, TN  \texttt{37831-6085}\\
+Work: \texttt{865.574.0834}\\
+Email: potokte@ornl.gov\\
+Web: \href{http://cda.ornl.gov/potok/personal/Thomas\_Potok\_PhD/About.html}{http://cda.ornl.gov/potok/personal/Thomas\_Potok\_PhD/About.html}
+
+%Mr.~Kevin Shaw\\
+%Branch Head, Geospatial Sciences and Technology (Code \texttt{7440})\\
+%U.S. Naval Research Laboratory\\
+%\texttt{1005} Balch Blvd.\\
+%Stennis Space Center, MS  \texttt{39529}\\
+%Work: \texttt{228.688.4197}\\
+%Email: kevin.shaw@nrlssc.navy.mil\\
+%Web: \href{http://www7440.nrlssc.navy.mil}{http://www7440.nrlssc.navy.mil}\\
+
+%Dr.~Donna Reese\\
+%Department Head and Professor, Department of Computer Science and Engineering\\
+%P.O.~Box \texttt{9637}\\
+%Mississippi State University, MS  \texttt{39762}\\
+%Work: \texttt{662.325.2756}\\
+%Fax: \texttt{662.325.8997}\\
+%Email: dreese@cse.msstate.edu\\
+%Web: \href{http://www.cse.msstate.edu/~dreese}{http://www.cse.msstate.edu/~dreese}\\
+
+%Dr. Patrick J. Fitzpatrick\\
+%Geosystems Research Institute\\
+%Building 1103, Room 108\\
+%Stennis Space Center, MS  \texttt{39529}\\
+%Work: \texttt{228.688.1157}\\
+%Cell: \texttt{985.788.9486}\\
+%Email: fitz@ngi.msstate.edu\\
+%Web: \href{http://www.drfitz.net}{http://www.drfitz.net}\\
+
+%\vspace{1cm}
+%\vfill{}
+%\hrulefill
+
+%\begin{center}
+%{\scriptsize  Last updated on \today\- •\- 
+%\href{http://cda.ornl.gov/steed/personal/}{http://cda.ornl.gov/steed/personal/}}
+  %Typeset in \href{http://nitens.org/taraborelli/cvtex}{
+%\fontspec{Times New Roman}\XeTeX }\\
+% ---- FILL IN THE FULL URL TO YOUR CV HERE
+%\href{http://cda.ornl.gov/steed/personal/vita/}{http://cda.ornl.gov/steed/personal/vita/}}
+%\end{center}
+
+\end{document}
