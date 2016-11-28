@@ -25,7 +25,7 @@
 % DOCUMENT LAYOUT
 \usepackage{geometry}
 %\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
-\geometry{letterpaper, textwidth=6.0in, textheight=9.5in, marginparsep=7pt, marginparwidth=.6in}
+\geometry{letterpaper, textwidth=6.0in, textheight=9.0in, marginparsep=7pt, marginparwidth=.6in, includehead}
 \setlength\parindent{0in}
 
 % FONTS
@@ -70,7 +70,7 @@
 \hypersetup{linkcolor=Purple,citecolor=Purple,filecolor=black,urlcolor=Purple}
 \renewcommand{\descriptionlabel}[1]{\hspace{\labelsep}\textsc{#1}}
 
-\usepackage{sparklines}
+% \usepackage{sparklines}
 
 \usepackage{lastpage}
 \usepackage{fancyhdr}
@@ -82,15 +82,15 @@
     %\cfoot{\small Page \texttt{\thepage}\ of \texttt{\pageref{LastPage}}}
     %\lfoot{\small Chad A.\ Steed}
     %\rfoot{\small \today}
-    \rfoot{\sffamily \small \thepage\ / \pageref{LastPage} • \today}
+    \rfoot{\small \thepage\ / \pageref{LastPage} • \today}
 }
 
 \fancyhf{}
 %\lhead{\small Chad A. Steed, Ph.D.}
-\rhead{\sffamily \small Chad A. Steed • Curriculum Vitae}
+\rhead{\small Chad A. Steed • Curriculum Vitae}
 %\chead{\small Research and Teaching Statements}
 %\chead{\small \nouppercase\leftmark}
-\rfoot{\sffamily \small \thepage\ / \pageref{LastPage} • \today}
+\rfoot{\small \thepage\ / \pageref{LastPage} • \today}
 %\lfoot{\small Chad A.\ Steed}
 %\lfoot{\small \today}
 %{\scriptsize  Last updated on \today\- •\-
