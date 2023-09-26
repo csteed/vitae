@@ -1,49 +1,24 @@
-%------------------------------------
-% Dario Taraborelli
-% Typesetting your academic CV in LaTeX
-%
-% URL: http://nitens.org/taraborelli/cvtex
-% DISCLAIMER: This template is provided for free and without any guarantee
-% that it will correctly compile on your system if you have a non-standard
-% configuration.
-% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
-%------------------------------------
-
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-
 \documentclass[11pt, letterpaper]{article}
-\usepackage{fontspec}
-\usepackage{wrapfig}
-\usepackage{etoolbox}
-
-% CONDITIONAL TO SHOW REFERENCES OR NOT
-\newtoggle{showreferences}
-%\toggletrue{showreferences}
-\togglefalse{showreferences}
-
-% DOCUMENT LAYOUT
-\usepackage{geometry}
-%\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
-\geometry{letterpaper, textwidth=5.9in, textheight=9.0in, marginparsep=7pt, marginparwidth=.7in, includehead}
-\setlength\parindent{0in}
-
-% FONTS
-\usepackage{xunicode}
-\usepackage{xltxtra}
-\defaultfontfeatures{Mapping=tex-text} % converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
-\setromanfont[Ligatures={Common}, Numbers={OldStyle}]{Hoefler Text}
-\setmonofont[Scale=0.8]{Monaco}
-\setsansfont[Scale=0.9]{Optima Regular}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 
 % ---- CUSTOM AMPERSAND
-\newcommand{\amper}{{\fontspec[Scale=.95]{Hoefler Text}\selectfont\itshape\&}}
+\newcommand{\amper}{{\selectfont\itshape\&}}
+
 % ---- MARGIN YEARS
 \usepackage{marginnote}
 \newcommand{\years}[1]{\marginnote{\scriptsize #1}}
 \renewcommand*{\raggedrightmarginnote}{}
 \setlength{\marginparsep}{7pt}
 \reversemarginpar
+
+\usepackage{geometry}
+\geometry{letterpaper, textwidth=5.9in, textheight=9.0in, marginparsep=7pt, marginparwidth=.7in, includehead}
+\setlength\parindent{0in}
+
+\usepackage[xetex, bookmarks, breaklinks, pdftitle={Chad A. Steed - vita},pdfauthor={Chad A. Steed}]{hyperref}
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=blue}
 
 \newenvironment{packed_itemize}{
 \begin{itemize}
@@ -52,91 +27,26 @@
   \setlength{\parsep}{0pt}
 }{\end{itemize}}
 
-% HEADINGS
-\usepackage{sectsty}
-\usepackage[normalem]{ulem}
-\sectionfont{\sffamily\mdseries\bfseries\Large\underline}
-\subsectionfont{\sffamily\mdseries\bfseries\scshape\large}
-\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
-
-% PDF SETUP
-% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
-%\PassOptionsToPackage{hyphens}{url}\usepackage[xetex, bookmarks, colorlinks, breaklinks, pdftitle={Chad A. Steed - vita},pdfauthor={Chad A. Steed}]{hyperref}
-\usepackage[usenames, dvipsnames]{xcolor}
-% \usepackage[xetex, bookmarks, colorlinks, breaklinks, pdftitle={Chad A. Steed - vita},pdfauthor={Chad A. Steed}]{hyperref}
-\usepackage[xetex, bookmarks, breaklinks, pdftitle={Chad A. Steed - vita},pdfauthor={Chad A. Steed}]{hyperref}
-%\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=blue}
-% \hypersetup{linkcolor=Maroon,citecolor=Maroon,filecolor=black,urlcolor=Maroon}
-\hypersetup{linkcolor=Purple,citecolor=Purple,filecolor=black,urlcolor=Purple}
-\renewcommand{\descriptionlabel}[1]{\hspace{\labelsep}\textsc{#1}}
-
-% \usepackage{sparklines}
-
-\usepackage{lastpage}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-
-\fancypagestyle{firststyle}
-{
-    \fancyhf{}
-    \rfoot{\small \thepage\ / \pageref{LastPage} • \today}
-}
-
-\fancyhf{}
-%\lhead{\small Chad A. Steed, Ph.D.}
-\rhead{\small Chad A. Steed • Curriculum Vitae}
-%\chead{\small Research and Teaching Statements}
-%\chead{\small \nouppercase\leftmark}
-\rfoot{\small \thepage\ / \pageref{LastPage} • \today}
-%\lfoot{\small Chad A.\ Steed}
-%\lfoot{\small \today}
-%{\scriptsize  Last updated on \today\- •\-
-%\lfoot{\small Last Updated: \today}
-%\rfoot{\small \href{http://cda.ornl.gov/steed/personal/}{http://cda.ornl.gov/steed/personal/}}
-%\renewcommand{\footrulewidth}{0.01cm}
-\renewcommand{\headrulewidth}{0cm}
-%\renewcommand\footrule{\begin{minipage}{1\textwidth}
-%\hrule width \hsize height 2pt \kern 1mm \hrule width \hsize
-%\end{minipage}\par}%
-
-% DOCUMENT
 \begin{document}
-\thispagestyle{firststyle}
 
 \begin{tabbing}
     {\sffamily \LARGE \textbf{CHAD A.\ STEED}} \` {\sffamily \LARGE CURRICULUM VITAE}
 \end{tabbing}
 
-\begin{wrapfigure}{r}{0.38\textwidth}
-  \vspace{-30pt}
-  \begin{center}
-    %\includegraphics[width=0.28\textwidth]{chad2.jpg}
-    \includegraphics[width=0.4\textwidth]{climate-framed.png}
-  \end{center}
-  \vspace{-20pt}
-\end{wrapfigure}
-
-Senior Director of Data Analytics \&\\
-Distinguished Research Fellow\\
-Lirio, LLC\\
-320 Corporate Drive, NW\\
-Knoxville, TN \texttt{37923}
-U.S.A.\\[.2cm]
-% Phone: \texttt{865-574-7168}\\
-% Cell: \texttt{865-335-1231}\\
-% Email: \href{mailto:csteed@acm.org}{csteed@acm.org}\\[.2cm]
-Email: \href{mailto:csteed@lirio.com}{csteed@lirio.com}\\[.2cm]
+Group Leader \& Distinguished Research Staff\\
+Data Science and Visualization Group\\
+Cyber Resilience and Intelligence Division\\
+National Security Sciences Directorate\\
+Oak Ridge National Laboratory\\
+Oak Ridge, TN \texttt{37831}\\[.2cm]
+Email: \href{mailto:csteed@acm.org}{csteed@acm.org}\\[.2cm]
 \textsc{Website}: \href{https://csteed.com}{https://csteed.com}\\
 \textsc{LinkedIn}: \href{https://www.linkedin.com/in/chadsteed}{https://www.linkedin.com/in/chadsteed}\\
+\textsc{Observable }: \href{https://observablehq.com/@csteed}{https://observablehq.com/@csteed}\\
 \textsc{ORCID}:
 \href{http://orcid.org/0000-0002-3501-909X}{http://orcid.org/0000-0002-3501-909X}\\
-\textsc{Google Scholar}: \href{http://scholar.google.com/citations?user=DF2gMWkAAAAJ}{http://scholar.google.com/citations?user=DF2gMWkAAAAJ}\\
+\textsc{Google Scholar}: \href{http://scholar.google.com/citations?user=DF2gMWkAAAAJ}{http://scholar.google.com/citations?user=DF2gMWkAAAAJ}
 
-\section*{Areas of specialization}
-Data Science • Data Wrangling • Visual Analytics • Interactive Data Visualization • Machine Learning • Statistical Analysis • Explainable AI • Cyber Security • Cyber Physical • Database Systems • Climate Science • Text Mining • Computer Graphics • Geographic Systems • Graphic Design
-
-\section*{Technical Skills}
-JavaScript • Observable • Node.js • D3.js • Semantic UI • React.js • Electron.js • Jekyll • Pandas • ScikitLearn • Python • Java • C/C++ • CSS • HTML5 • HDF5 • NetCDF • SQL and NoSQL Databases • OpenGL • Git • Maven • LaTeX • Processing • Matlab • R • OmniGraffle
 
 \section*{Honors \amper{} Awards}
 \noindent\years{2021}Regions Financial Corp., Data \& Analytics Associate of the Month (July)\\
@@ -159,70 +69,71 @@ JavaScript • Observable • Node.js • D3.js • Semantic UI • React.js •
 \years{1999}``Best of Show'' Painting Award in USM Fine Art Dept. Student Art Show\\
 \years{1997}USM College of Science and Technology Scholar
 
+
 \section*{Education}
-\noindent\years{2005--2008}\textsc{Ph.D.} in Computer Science (Concentration:
-Computer Graphics and Visualization)\\
-Mississippi State University, Starkville, MS\\
+\noindent\years{2005--2008}\textbf{\textsc{Ph.D.} in Computer Science}, Mississippi State University\\
+% \emph{Primary Concentration:} Computer Graphics and Visualization\\
+% \emph{Secondary Concentration:} Software Engineering\\
 \emph{Dissertation Title:} ``Development of a Geovisual Analytics Environment using Parallel Coordinates
 with Applications to Tropical Cyclone Analysis''\\
 \emph{Advisor:} J.\ Edward Swan II\\
 \emph{Committee:} T.J.\ Jankun-Kelly, Robert J.\ Moorhead, Edward B.\ Allen, and
 Patrick J.\ Fitzpatrick\\
 
-\years{2002--2004}\textsc{M.S.} in Hydrographic Science\\
-The University of Southern Mississippi, Hattiesburg, MS\\
+\years{2002--2004}\textbf{\textsc{M.S.} in Hydrographic Science}, The University of Southern Mississippi\\
 \emph{Project Title:} ``A Hydrographic Survey of the Pearl River from Stennis Space Center to the I-10 Bridge''\\
+\emph{Advisor:} David Dodd\\
 
-\years{1994--1999}\textsc{B.S.} in Software Engineering (Minor: Fine Art), \emph{Honors}\\
-The University of Southern Mississippi, Hattiesburg, MS
+\years{1994--1999}\textbf{\textsc{B.S.} in Software Engineering}, The University of Southern Mississippi\\
+\emph{Minor:} Fine Art\\
+\emph{Senior Project Title:} ``A Cartographic Viewer for the World Vector Shoreline Plus Database''\\
+Graduated with Honors\\
+\emph{Advisor:} Desmond Fletcher\\
 
 \section*{Professional Experience}
-\noindent\years{2021--present}Senior Director, Data Analytics\\
+
+\years{2022-Present}\textbf{Oak Ridge National Laboratory}, \emph{Oak Ridge, TN}\\
+Group Leader \amper{} Distinguished Research Staff\\
+Data Science and Visualization Group\\
+National Security Sciences Directorate\\
+
+\underline{Responsibilities:} I lead the Data Science and Visualization Group, which consists of researchers and engineers focused on ORNL's national security mission. My research focuses on creating unique visual analytics techniques and tools that blend data visualization, statistical learning, and scalable data access to support advanced exploratory data analysis. I apply these techniques to several multi-disciplinary domains, namely cyber-security, healthcare, materials science, text mining, climate science, additive manufacturing, nuclear nonproliferation, high performance computing, and quantum computing. I serve as principal investigator on numerous projects funded by various government agencies and in collaboration with both ORNL and external contributors from other national laboratories and government organizations, academia, and industry. I secure and manage funding grants to cover my work hours and those of other ORNL staff, particularly those in my group. I publish, present, and demonstrate research results to the broader academic, industry, and government communities.\\
+
+\noindent\years{2021--2022}\textbf{Lirio LLC}, \emph{Knoxville, TN}\\
+Senior Director of Data Analytics \amper{}\\
 Distinguished Research Fellow\\
-Lirio LLC, Knoxville, TN\\[.2cm]
 
-Reporting directly to the CTO, I lead a team of data scientists who are focused on building, maintaining, and evaluating Lirio's behavior change AI platform. Our team follows an Agile process to tackle reporting, visualization, exploratory analysis, explainable AI, propensity modeling, and other data science tasks. In addition to leading data analytics functions at Lirio, I spend half of my time developing novel web-based visual analytics methods and tools in D3.js and Python. I have a dual appointment with the research arm at Lirio, contributing to our unique AI platform. I regularly interact with the executive team on strategic initiatives, give research talks, and interact with our clients. I am also a Cultural Ambassador at Lirio, serving on the Lead and Learn committee. Externally, I maintain active connections with the broader visual analytics community, serve as a reviewer for journals and conferences, and participate in an editorial capacity for journals.\\
-\emph{\underline{Responsibilities}}: Subject matter expert in advanced visual analytics and web-based data science product development; Lead web-based data visualization developer; Established and administer the Lirio Visual Analytics Platform (hosted on Observable); Advisor to executive leadership team; Contributor to client success and growth endeavors; Recruit, hire, manage, and mentor staff; Create educational content about data visualization and data science for company-wide learning; Build and maintain connections with academia, national laboratories, and industry.\\
-\newpage
-\years{2021}Vice President, Enterprise Data and Analytics\\
-Data Visualization Function Manager\\
-Regions Financial Corporation, Birmingham, AL\\[.2cm]
+\underline{Responsibilities:} Reporting directly to the CTO, I led a team of data scientists with a mission of building, understanding, and improving Lirio's behavior change AI platform with an emphasis on healthcare applications. My time was evenly split between leadership and technical development activities. I led the establishment of an internal analytics platform from conception to evaluation to operation use. This platform was based on the Observable system and provided a self-service, distributed environment for visual data exploration and reporting. I also served as the subject matter expert at Lirio for data visualization and visual analytics topics. I regularly gave educational talks to the company on these topics. I had daily interactions with the executive leadership team on strategic initiatives, business development, and client relations. I also served as a Lirio Cultural Ambassador on the Lead and Learn committee.\\
 
-I design, implement, and evaluate advanced visual analytics techniques for a variety of business units at Regions, including finance, contact center, digital banking, audit, fraud, and wealth management. I develop data visualization and analysis methods for data wrangling, exploratory data analysis, and explainable AI tasks within the Data and Analytics group. Most of these methods are deployed as D3.js web applications, but I also am proficient with Tableau, PowerBI, Excel, R, Jupyter, and other data analysis applications. I also mentor junior associates, serve as a data visualization subject matter expert to the executive leadership team, evaluate and work with vendors and contractors, and help educate associates throughout the bank on best practices related to data visualization, data science, and exploratory data analysis. My responsibilities also include publications, presentations, and editorial duties in the external data visualization and data science communities as well as engagements with academia.\\
-\emph{\underline{Responsibilities}}: Subject matter expert in advanced visual analytics and web-based data science product development; Lead web-based data visualization application developer; Advisor to executive leadership teams; Vendor evaluations and partnerships; Recruit, manage, and mentor junior staff; Create educational content about data visualization and data science for company wide learning; Supervise and train other staff in the data visualization team; Build and maintain connections with academia and companies.\\
+\years{2021}\textbf{Regions Financial Corporation}, \emph{Birmingham, AL}\\
+Vice President \amper{} Data Visualization Function Manager\\
+Enterprise Data and Analytics\\
 
-\years{2010--2021}Senior Research Staff and Director of the VISTA Data Exploration Laboratory\\
+\underline{Responsibilities:} I reported directly to the Head of Data Visualization and assisted in hiring and management of a new team of data visualization specialists. I served as a subject matter expert for visual analytics, D3.js, and web application development. Our team worked with a variety of business units, including finance, contact center, digital banking, audit, fraud, and wealth management. These interactions included briefings to upper management, including the C-suite. I introduced a new model for developing web-based data exploration products to address limitations of prior PowerBI-based development. I participated in several company-wide educational events, delivering talks on data visualization and multivariate analysis techniques. I frequently met with vendors and external contractors, evaluating products and partnership opportunities.\\
+
+\years{2010-2021}\textbf{Oak Ridge National Laboratory}, \emph{Oak Ridge, TN}\\
+Director of the VISTA Data Exploration Laboratory \amper{} Senior Research Staff\\
 Computer Science and Mathematics Division\\
-National Security Sciences Directorate (matrix appointment)\\
-Oak Ridge National Laboratory, Oak Ridge, TN\\[.2cm]
-I served as the Director of the Visual Informatics for Science and Technology Advances (VISTA) Laboratory and as a Senior Visual Analytics Researcher in the Computer Science and Mathematics Division at ORNL. I also had a matrix appointment to the National Security Sciences Directorate at ORNL, and I held two Joint Faculty Appointments to the University of Tennessee, where I periodically mentored students and taught computer science courses. As the founding Director of the VISTA Lab, I was responsible for leading a collaborative data exploration laboratory that served as a hub for advanced data visualization expertise at ORNL. My research focused on creating new visual analytics techniques that blended data visualizations, machine learning, and scalable databases to support effective exploratory data analysis. I applied these techniques to multi-disciplinary domains of national significance, namely cyber security, healthcare, materials science, publication mining, climate science, high performance computing, quantum computing, and manufacturing.\\
-\emph{\underline{Responsibilities}}: Built a community of data visualization specialists across multiple directorates at ORNL; Led VISTA lab operations; Internal data science consulting with ORNL domain experts and leadership; Conducted research and development at both the Principal Investigator and Investigator levels; Active in the full scope of data science research and development; Established and maintained funding sources to cover my hours and those of other staff; Shared technical direction and leadership of the laboratory; Published, presented, and demonstrated to academic, industry, and military communities; Mentored students and junior research staff; Managed equipment acquisition and maintenance; Performed professional service activities; Recruited and hired new employees; Line management of data science professionals; Liaison to other divisions at ORNL.\\
 
-\years{2001-2010}Computer Scientist\\
+\underline{Responsibilities:} I was the founding Director of the Visual Informatics for Science and Technology Advances (VISTA) Laboratory responsible for leading a collaborative data exploration laboratory that served as the hub for data visualization expertise at ORNL spanning multiple directorates. My research focused on creating unique visual analytics techniques and tools that blended data visualization, statistical learning, and scalable data access to support advanced exploratory data analysis. I applied these techniques to several multi-disciplinary domains, namely cyber-security, healthcare, materials science, text mining, climate science, additive manufacturing, nuclear nonproliferation, high performance computing, and quantum computing. I served as principal investigator on numerous projects funded by various government agencies and in collaboration with both ORNL and external contributors from other national laboratories and government organizations, academia, and industry. Prior to directing VISTA, I served as the team leader in the Computational Data Analytics group. I held a matrix appointment to the ORNL National Security Sciences Directorate and two Joint Faculty Appointments at the University of Tennessee. I secured and managed funding grants to cover my work hours and those of other ORNL staff. I published, presented, and demonstrated research results to the broader academic, industry, and government communities. I also maintained several open source projects for data science and visualization tools.\\
+
+\years{2001-2010}\textbf{U.S.~Naval Research Laboratory}, \emph{Stennis Space Center, MS}\\
+Computer Scientist\\
 Geospatial Science and Technology Branch\\
 Marine Geosciences Division\\
-Naval Research Laboratory, Stennis Space Center, MS\\[.2cm]
-At NRL, my primary activity was developing visual analytics systems and
-interaction techniques for environmental data analysis.  Specifically, I
+
+\underline{Responsibilities:} My primary activity was developing visual analytics systems and databases for environmental data analysis.  Specifically, I
 developed visual analytics solutions for studying tropical cyclone climate
-data, oceanographic data, acoustic model sensitivity, and bathymetry data.  I
+data, oceanographic data, acoustic model sensitivity, and bathymetric data.  I
 also developed illustrative visualization techniques for ocean data sets and
 new environmental database architectures for bathymetric, hydrographic,
-geophysical, ambient noise, seafloor characterization, and unmanned vehicles.\\
-\emph{\underline{Responsibilities}}:  Conducted research and development at both the
-Principal Investigator and Investigator levels; Established and maintained
-funding sources; Shared technical direction and leadership of the
-laboratory; Published, presented, and demonstrated to academic, professional,
-and military communities; Management and supervision of full-time employees
-and graduate student interns (usually over the summer); Managed equipment
-acquisition and maintenance; Professional service activities; As a contracting
-officer technical representative (COTR), oversaw and provided technical
-direction to contractors.\\
+geophysical, ambient noise, seafloor characterization, and unmanned vehicles. I conducted research and development at both the principal investigator and investigator levels. I sought and managed grants from various government agencies to cover my time and the time of my colleagues. I published, presented, and demonstrated to academic, professional, and military communities. I supervised full-time employees and student interns (usually over the summer) and I managed equipment acquisition and maintenance. As a contracting officer technical representative (COTR), oversaw and provided technical direction to contractors.\\
 
-\years{1999-2001}Software Engineer\\
+\years{1999-2001}\textbf{Lockheed Martin}, \emph{Stennis Space Center, MS}\\
+Application Software Engineer\\
 Scientific Systems\\
-Lockheed Martin, Stennis Space Center, MS\\[.2cm]
-After a summer internship, during which I developed an
+
+\underline{Responsibilities:} After a summer internship, during which I developed an
 interactive map application to visualize the World Vector Shoreline Plus
 (WVS+) database, I was hired to serve as the Principal Investigator on a new
 project to transition the Digital Bathymetric Data Base Variable Resolution
@@ -233,39 +144,39 @@ model and APIs, and development of database utilities.  This project also
 included the development of both a standalone and web-based database
 visualization / access application.  I was the Principal Investigator for
 the Naval Oceanographic Office's (NAVOCEANO) DBDBV (version 3 and 4) and Mine
-Warfare Bottom Sediment Type (BST) database.
+Warfare Bottom Sediment Type (BST) database.\\
 
-\section*{Affiliations and Joint Appointments}
+\section*{Committee Work and Joint Appointments}
 
-\years{2018--2019}Division Science Council\\
+\years{2018--2019}\textbf{Division Science Council}\\
 Computer Science and Mathematics Division\\
 Oak Ridge National Laboratory, Oak Ridge, TN\\
 
-\years{2017--2021}Joint Faculty Appointment\\
+\years{2017--2021}\textbf{Joint Faculty Appointment}\\
 The Bredesen Center for Interdisciplinary Research and Graduate Education\\
 The University of Tennessee, Knoxville, TN\\
 
-\years{2017--2018}Division Hiring Committee\\
+\years{2017--2018}\textbf{Division Hiring Committee}\\
 Computer Science and Mathematics Division\\
 Oak Ridge National Laboratory, Oak Ridge, TN\\
 
-\years{2013--2021}Joint Faculty Appointment\\
+\years{2013--2021}\textbf{Joint Faculty Appointment}\\
 Electrical Engineering and Computer Science Department\\
 The University of Tennessee, Knoxville, TN\\
 
-\years{2013--2021}Research Affiliate\\
+\years{2013--2021}\textbf{Research Affiliate}\\
 Climate Change Science Institute\\
 Oak Ridge National Laboratory, Oak Ridge, TN\\
 
-\years{2012--2019}Adjunct Professor\\
+\years{2012--2019}\textbf{Adjunct Professor}\\
 Department of Computer Science and Engineering\\
 Mississippi State University, Mississippi State, MS\\
 
-\years{2012--2016}Research Affiliate\\
+\years{2012--2016}\textbf{Research Affiliate}\\
 Center for Intelligent Systems and Machine Learning\\
 College of Engineering, The University of Tennessee, Knoxville, TN\\
 
-\years{2009}Adjunct Faculty\\
+\years{2009}\textbf{Adjunct Faculty}\\
 School of Computing\\
 University of Southern Mississippi, Hattiesburg, MS
 
@@ -450,25 +361,8 @@ Several other open source projects are available online:
 \item \href{http://bl.ocks.org/csteed}{http://bl.ocks.org/csteed}
 \end{packed_itemize}
 
-%\section*{Publications \amper{} talks}
 \section*{Publications}
 \texttt{94} research publications
-% \begin{sparkline}{4}
-% \sparkspike .15 .36
-% \sparkspike .3 .36
-% \sparkspike .45 .45
-% \sparkspike .6 .45
-% \sparkspike .75 .27
-% \sparkspike .9 .09
-% \sparkspike 1.05 .64
-% \sparkspike 1.2 .82
-% \sparkspike 1.35 .27
-% \sparkspike 1.5 .36
-% \sparkspike 1.65 .91
-% \sparkspike 1.8 1.
-% \sparkspike 1.95 .18
-% \sparkspike 2.1 .09
-% \end{sparkline}\\
 (\texttt{11} journal articles,
 \texttt{26} conference papers, \texttt{9} referred abstracts,
 \texttt{20} workshop or position papers, \texttt{2} book
@@ -926,12 +820,6 @@ Method and System to Discover and Recommend Interesting Documents. 31 Jan.\ 2017
 Patrick J. Fitzpatrick. Information Assisted Visual Interface, System, and
 Method for Identifying and Quantifying Multivariate Associations. 1 Jan.\ 2013.
 
-%\subsection*{In Submission (\texttt{1})}
-%\noindent\years{2014}\textbf{Chad A.\ Steed}, Katherine J.\ Evans, John F.\ Harney,
-%Brian C.\ Jewell, Galen Shipman, Brian E.\ Smith, Peter E.\ Thornton, and
-%Dean N. Williams. Web-based Visual Analytics for Extreme Scale Climate
-%Science. \emph{SuperComputing 2013}. (Under Review)
-
 \section*{Teaching}
 
 \noindent\years{Spring 2018}DSE \texttt{512}, Intro to Data Science and Computing II, University of Tennessee.\\
@@ -961,11 +849,6 @@ Electrical Engineering
 \years{2015}Margaret G.\ Drouhard, \textsc{M.S.} 2015, \emph{Visualization Techniques for
 Neuroscience-Inspired Dynamic Architectures}, Department of Electrical Engineering
 \amper{} Computer Science, University of Tennessee, Knoxville, TN.
-
-% \subsection*{Current Ph.D.\ \amper{} Masters Students -- Committee Member}
-%
-% \noindent\years{2016--present}Gregory Simpson, \textsc{M.S.}, Department of Electrical Engineering
-% \amper{} Computer Science, University of Tennessee, Knoxville, TN.
 
 \subsection*{Intern Mentoring}
 
@@ -1018,7 +901,7 @@ GPGPU programming and urban structure data visualization on the web.
   \item[Workshop Organizer:] Workshop on Interactive Visual Text Analytics at IEEE VisWeek (2013).
   \item[Session Chair:]ACM Conference on Intelligent User Interfaces (2015), Visualization and
   Data Analysis Conference (2012), MTS/IEEE Oceans (2009).
-  \item[Journal Reviewer:] ACM Trans.\ on Applied Perception (2016, 2017, 2020, 2021), IEEE Trans.\ on Visualization and Computer Graphics (2017, 2018, 2019, 2020), Journal of Imaging Science and Technology (2017), Neurocomputing (2016), ACM Trans.\ on Interactive Intelligent Systems (2015), GeoInformatica (2015), IEEE Computer Graphics and Applications (2013),
+  \item[Journal Reviewer:] Information Visualization (2022, 2023), ACM Trans.\ on Applied Perception (2016, 2017, 2020, 2021), IEEE Trans.\ on Visualization and Computer Graphics (2017, 2018, 2019, 2020), Journal of Imaging Science and Technology (2017), Neurocomputing (2016), ACM Trans.\ on Interactive Intelligent Systems (2015), GeoInformatica (2015), IEEE Computer Graphics and Applications (2013),
   Journal of Computational and Graphical Statistics (2013),
   WIREs Computational Statistics (2012, 2013),
   Computers \amper{} Geosciences Journal (2012),
@@ -1422,18 +1305,5 @@ published in NRL Formal Report NRL/FR/7440–05-10,106.
 the Oak Ridge Public School Education Foundation (ORPSEF), \url{http://orpsef.org}\\
 \years{2015--2016}Mentor for the Oak Ridge High School Math Honors Thesis Program\\
 \years{2015}``Hour of Code'' Program Volunteer for Woodland Elementary School, Oak Ridge, TN\\
-
-%\vspace{1cm}
-% \vfill{}
-%\hrulefill
-
-%\begin{center}
-%{\scriptsize  Last updated on \today\- •\-
-%\href{http://cda.ornl.gov/steed/personal/chadsteed\_cv.pdf}{http://cda.ornl.gov/steed/personal/chadsteed\_cv.pdf}}
-  %Typeset in \href{http://nitens.org/taraborelli/cvtex}{
-%\fontspec{Times New Roman}\XeTeX }\\
-% ---- FILL IN THE FULL URL TO YOUR CV HERE
-%\href{http://cda.ornl.gov/steed/personal/vita/}{http://cda.ornl.gov/steed/personal/vita/}}
-%\end{center}
 
 \end{document}
